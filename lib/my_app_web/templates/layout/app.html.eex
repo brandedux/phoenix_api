@@ -13,7 +13,12 @@
         <nav role="navigation">
           <ul>
             <!--li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li-->
-            <li><a href="/oauth/applications">API Tokens</a></li>
+            <li style="display:inline-block;padding-right: 1em">
+              <a href="/oauth/applications">API Tokens</a>
+            </li>
+            <li style="display:inline-block;"> 
+              <a href="/registration/edit">Profile</a>
+            </li>
           </ul>
         </nav>
         <a href="http://phoenixframework.org/" class="phx-logo">
