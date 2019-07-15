@@ -32,7 +32,12 @@ import_config "#{Mix.env()}.exs"
 # Configures POW for Oauth2
 config :my_app, :pow,
   user: MyApp.Users.User,
-  repo: MyApp.Repo
+  repo: MyApp.Repo,
+  extensions: [PowResetPassword, PowEmailConfirmation],
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
+  web_module: MyAppWeb,
+  mailer_backend: MyAppWeb.PowMailer,
+  web_mailer_module: MyAppWeb
 
 # Configures Ex Oauth2
 config :my_app, ExOauth2Provider,
