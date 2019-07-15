@@ -2,6 +2,7 @@ defmodule MyAppWeb.Router do
   use MyAppWeb, :router
   # Add POW and Oauth2 Provider
   use Pow.Phoenix.Router
+  use Pow.Extension.Phoenix.Router, otp_app: :my_app
   use PhoenixOauth2Provider.Router, otp_app: :my_app
 
   pipeline :browser do
@@ -27,6 +28,7 @@ defmodule MyAppWeb.Router do
     pipe_through :browser
 
     pow_routes()
+    pow_extension_routes()
   end
 
   scope "/" do

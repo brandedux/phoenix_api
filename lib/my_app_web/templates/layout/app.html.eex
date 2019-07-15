@@ -16,8 +16,11 @@
             <li style="display:inline-block;padding-right: 1em">
               <a href="/oauth/applications">API Tokens</a>
             </li>
-            <li style="display:inline-block;"> 
+            <li style="display:inline-block;padding-right: 1em"> 
               <a href="/registration/edit">Profile</a>
+            </li>
+            <li style="display:inline-block;"> 
+              <%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %>
             </li>
           </ul>
         </nav>

@@ -66,4 +66,16 @@ defmodule MyAppWeb do
   defmacro __using__(which) when is_atom(which) do
     apply(__MODULE__, which, [])
   end
+
+  # ------------------------------------
+  # Add mailer module for POW Extensions
+  def mailer_view do
+    quote do
+      use Phoenix.View,
+        root: "lib/my_app_web/templates",
+        namespace: MyAppWeb
+
+      use Phoenix.HTML
+    end
+  end
 end
